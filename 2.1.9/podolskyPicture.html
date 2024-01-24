@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 canvas shapes</title>
+<script>
+    function draw() {
+        
+      var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    
+    // Дерево
+    ctx.beginPath();
+    ctx.fillStyle = '#433614';
+    ctx.fillRect(100, 220, 30, 180);
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.fillStyle = '#127800';
+    ctx.moveTo(20, 320);
+    ctx.lineTo(210, 320);
+    ctx.lineTo(110, 20);
+    ctx.closePath();
+    ctx.fill();
+
+    // Дом
+    ctx.beginPath();
+    ctx.fillStyle = '#7b5b00';
+    ctx.fillRect(300, 200, 200, 300);
+    ctx.fill(); 
+
+    ctx.beginPath();
+    ctx.fillStyle = '	#FF7F50	';
+    ctx.moveTo(530, 200);
+    ctx.lineTo(270, 200);
+    ctx.lineTo(400, 50);
+    ctx.closePath();
+    ctx.fill(); 
+
+    ctx.beginPath();
+    ctx.fillStyle = '#808000';
+    ctx.fillRect(420, 300, 50, 100);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = '#8a6642';
+    ctx.arc(430, 350, 5, 0, 2 * Math.PI);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = '#51DBE5';
+    ctx.fillRect(330, 250, 60, 60);
+    ctx.fill();
+        
+
+        //Солнце-луна
+        ctx.beginPath();
+        let style = "#5E7475";
+        
+
+        function changeTime(){
+            if (style == "yellow"){
+                style =  "white"
+                ctx.fillStyle = `${style}`;
+                ctx.arc(530, 70, 50, 0 , 2*Math.PI);
+                ctx.fill();
+                canvas.style.background = "#293C3D"
+            }
+            else{
+                style = "yellow" 
+                ctx.fillStyle = `${style}`;
+                ctx.arc(530, 70, 50, 0 , 2*Math.PI);
+                ctx.fill();
+                canvas.style.background = "#5ba4ff"
+            } 
+        }
+        changeTime()
+        setInterval(changeTime, 100000)
+    }
+</script>
+</head>
+
+<body onload="draw();">
+<canvas id="myCanvas" width="600" height="400">
+</canvas>
+</body>
+
+</html> 

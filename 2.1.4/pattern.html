@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 canvas pattern</title>
+<script>
+    function draw() {
+        
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var img = new Image();
+        img.src = 'https://avatars.mds.yandex.net/i?id=62111a24dcbfa5b1641728acc41ba67ae3e1d50c-10836596-images-thumbs&n=13';
+        
+        img.onload = function() {
+            var pattern = ctx.createPattern(img, 'repeat');
+
+            ctx.rect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = pattern;
+            ctx.fill();
+      };
+    }
+</script>
+</head>
+
+<body onload="draw();">
+    <canvas id="myCanvas" width="250" height="250">
+    </canvas>
+</body>
+</html> 

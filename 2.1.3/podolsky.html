@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 canvas shapes</title>
+<script>
+    function draw() {
+        
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.arc(250, 120, 80, 0, Math.PI);
+        ctx.closePath();
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+    }
+</script>
+</head>
+
+<body onload="draw();">
+<canvas id="myCanvas" width="350" height="350">
+</canvas>
+</body>
+
+</html> 
